@@ -45,6 +45,83 @@
 
 // export default App;
 
+// import "./App.css";
+// import { useState } from "react";
+// import Button from "./Components/addTodoButtonElement";
+
+// function App() {
+//   const [zadatci, setZadatci] = useState([]);
+//   const [formData, setFormData] = useState({
+//     zadatak: "",
+//   });
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     setZadatci([...zadatci, { task: formData.zadatak, completed: false }]);
+//     setFormData({ zadatak: "" });
+//   };
+
+//   const handleInputChange = (event) => {
+//     setFormData({ ...formData, zadatak: event.target.value });
+//   };
+
+//   const handleDelete = (index) => {
+//     const updatedTasks = [...zadatci];
+//     updatedTasks.splice(index, 1);
+//     setZadatci(updatedTasks);
+//   };
+
+//   const handleCheckboxChange = (index) => {
+//     const updatedTasks = [...zadatci];
+//     updatedTasks[index].completed = !updatedTasks[index].completed;
+//     setZadatci(updatedTasks);
+//   };
+
+//   return (
+   
+//     <div className="App">
+//       <form onSubmit={handleSubmit} className="mt-10 form-container">
+//         <label htmlFor="zadatci">Upiši zadatak</label>
+//         <input
+//           type="text"
+//           id="zadatci"
+//           name="zadatci"
+//           onChange={handleInputChange}
+//           value={formData.zadatak}
+//         />
+//         <Button />
+//       </form>
+//       <ul>
+//         {zadatci.map((zadatak, index) => (
+//           <li key={index}>
+//             <input
+//               type="checkbox"
+//               checked={zadatak.completed}
+//               onChange={() => handleCheckboxChange(index)}
+//             />
+//             <span
+//               style={{
+//                 textDecoration: zadatak.completed ? "line-through" : "none",
+//               }}
+//             >
+//               {zadatak.task}
+//             </span>
+//             <button className="delete" onClick={() => handleDelete(index)}>
+//               Izbriši zadatak
+//             </button>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+  
+//   );
+// }
+
+// export default App;
+
+
+
+
 import "./App.css";
 import { useState } from "react";
 import Button from "./Components/addTodoButtonElement";
@@ -57,10 +134,19 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setZadatci([...zadatci, { task: formData.zadatak, completed: false }]);
-    setFormData({ zadatak: "" });
+    if (formData.zadatak.trim() !== "") {
+      setZadatci([...zadatci, { task: formData.zadatak, completed: false }]);
+      setFormData({ zadatak: "" });
+    } else {
+      const alertElement = document.createElement('div');
+      alertElement.classList.add('alert');
+      alertElement.textContent = 'ALOOOOO!! Nije ništa upisano u polje!! Što da spremim???';
+      document.querySelector('.form-container').appendChild(alertElement);
+      setTimeout(() => {
+        alertElement.remove();
+      }, 4000);
+    }
   };
-
   const handleInputChange = (event) => {
     setFormData({ ...formData, zadatak: event.target.value });
   };
