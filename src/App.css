@@ -6,18 +6,32 @@ body {
 .App {  
   width: 1024px;
   margin: 3rem auto;
-  padding: 3rem 0;
-  background-color: lightgray;
+  padding: 2rem 0;
+  background-color: #cca3a4;
+}
 
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 40px;
+}
 
+.mt-10 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #5F425C;
 }
 
 input {
-  margin: 0 20px;
+  margin: 20px 20px;
+  border: transparent;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 input:focus {
   outline: none;
+
 }
 
 .delete {
@@ -39,7 +53,10 @@ li {
   display: grid;
   padding-bottom: 10px;
   grid-template-columns: 60px auto 10rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid  #1f101d;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 
@@ -52,4 +69,13 @@ li {
   border-radius: 5px;
   width: 600px;
   margin: 20px auto;
+}
+
+
+.button, .delete {
+  background-color:  #5f425c8f;
+  border: transparent;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
 }

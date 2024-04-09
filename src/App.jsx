@@ -125,6 +125,8 @@
 import "./App.css";
 import { useState } from "react";
 import Button from "./Components/addTodoButtonElement";
+import logo from './Components/logos/logo.png';
+
 
 function App() {
   const [zadatci, setZadatci] = useState([]);
@@ -166,14 +168,16 @@ function App() {
   return (
    
     <div className="App">
+       <img className="logo" src={logo} alt="Logo" />
       <form onSubmit={handleSubmit} className="mt-10 form-container">
-        <label htmlFor="zadatci">Upiši zadatak</label>
+        <label htmlFor="zadatci">Upiši zadatak...</label>
         <input
           type="text"
           id="zadatci"
           name="zadatci"
           onChange={handleInputChange}
           value={formData.zadatak}
+          placeholder="... ovdje"
         />
         <Button />
       </form>
