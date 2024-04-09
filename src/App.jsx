@@ -78,6 +78,7 @@ function App() {
   };
 
   return (
+   
     <div className="App">
       <form onSubmit={handleSubmit} className="mt-10 form-container">
         <label htmlFor="zadatci">Upiši zadatak</label>
@@ -112,6 +113,7 @@ function App() {
         ))}
       </ul>
     </div>
+  
   );
 }
 
