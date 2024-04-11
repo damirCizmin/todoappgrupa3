@@ -52,7 +52,7 @@ li {
   margin: 1rem auto;
   display: grid;
   padding-bottom: 10px;
-  grid-template-columns: 60px auto 10rem;
+  grid-template-columns: 460px 10rem;
   border-bottom: 1px solid  #1f101d;
   align-items: center;
   font-size: 18px;

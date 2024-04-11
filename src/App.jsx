@@ -213,7 +213,6 @@
 
 // export default App;
 
-
 import "./App.css";
 import { useState, useEffect } from "react";
 import Button from "./Components/addTodoButtonElement";
@@ -285,18 +284,21 @@ function App() {
       <ul>
         {zadatci.map((zadatak, index) => (
           <li key={index}>
-            <input
-              type="checkbox"
-              checked={zadatak.completed}
-              onChange={() => handleCheckboxChange(index)}
-            />
-            <span
-              style={{
-                textDecoration: zadatak.completed ? "line-through" : "none",
-              }}
-            >
-              {zadatak.task}
-            </span>
+            <label className="task-label">
+              <input
+                type="checkbox"
+                checked={zadatak.completed}
+                onChange={() => handleCheckboxChange(index)}
+              />
+              <span
+                className="task-text"
+                style={{
+                  textDecoration: zadatak.completed ? "line-through" : "none",
+                }}
+              >
+                {zadatak.task}
+              </span>
+            </label>
             <button className="delete" onClick={() => handleDelete(index)}>
               Izbriši zadatak
             </button>
